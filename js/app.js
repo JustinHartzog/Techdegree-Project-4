@@ -1,14 +1,4 @@
-let phrases = [
-  "how are you",
-  "you win",
-  "good guess",
-  "when pigs fly",
-  "a piece of cake",
-  "you can do it",
-  "you rock",
-]
-
-const game = new Game(0, phrases);
+let game;
 
 function resetDisplay() {
   document.getElementById('overlay').style.display = 'none';
@@ -26,9 +16,9 @@ function markButton(key) {
 
 
 document.getElementById('btn__reset').addEventListener('click', function(){
+  game = new Game(0);
   resetDisplay();
-  game.startGame();
-
+  game.startGame();  
 });
 
 document.addEventListener('click', function(event){

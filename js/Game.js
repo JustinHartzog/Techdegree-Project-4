@@ -1,13 +1,23 @@
 const phrase = new Phrase();
+const phrasesArr = [
+  "how are you",
+  "you win",
+  "good guess",
+  "when pigs fly",
+  "a piece of cake",
+  "you can do it",
+  "you rock",
+];
 class Game {
-  constructor(missed, phrases) {
+  constructor(missed) {
     this.missed = missed;
-    this.phrases = phrases;
+    this.phrases = phrasesArr;
   }
 
 
+
   getRandomPhrases() {
-    var randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+    var randomPhrase = this.phrases[Math.floor(Math.random() * this.phrases.length)];
     return randomPhrase;
   }
 
@@ -62,7 +72,6 @@ class Game {
       scoreboard.innerHTML += heart;
     }
     this.missed = 0;
-    console.log(this.missed);
   }
 
   startGame() {
